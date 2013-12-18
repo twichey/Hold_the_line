@@ -52,8 +52,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="exploding dtuff.png">
-      <Name>exploding dtuff</Name>
+    <Compile Include="exploding stuff.png">
+      <Name>exploding stuff</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
