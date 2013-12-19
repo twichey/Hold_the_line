@@ -22,7 +22,7 @@ namespace hold_the_line
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Map map;
+        Map ;
         xTile.Dimensions.Rectangle viewport;
         XnaDisplayDevice xnaDisplayDevice;
 
