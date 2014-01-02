@@ -22,8 +22,8 @@ namespace hold_the_line
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Map ;
-        xTile.Dimensions.Rectangle viewport;
+        Map
+        xTileRectangle;
         XnaDisplayDevice xnaDisplayDevice;
 
         public Game1()
@@ -42,7 +42,7 @@ namespace hold_the_line
         {
             // TODO: Add your initialization logic here
             xnaDisplayDevice = new XnaDisplayDevice(this.Content, GraphicsDevice);
-            viewport = new xTile.Dimensions.Rectangle(0, 0, this.Window.ClientBounds.Width, this.Window.ClientBounds.Height);
+            
 
             base.Initialize();
         }
@@ -56,8 +56,7 @@ namespace hold_the_line
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            map = Content.Load<Map>("map");
-            map.LoadTileSheets(xnaDisplayDevice);
+           
 
             // TODO: use this.Content to load your game content here
         }
@@ -85,14 +84,12 @@ namespace hold_the_line
             // TODO: Add your update logic here
             KeyboardState kb = Keyboard.GetState();
 
-            if (kb.IsKeyDown(Keys.Right))
-            {
-                viewport.X += 5;
-            }
+            if (kb.IsKeyDown(Keys.Right));}
+            
+                
+           
 
-            base.Update(gameTime);
-
-        }
+        
 
 
 
@@ -101,14 +98,15 @@ namespace hold_the_line
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override void Draw(GameTime gameTime)
-        {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+        protected override   
+        
+           
 
-            map.Draw(xnaDisplayDevice, viewport);
+            
             // TODO: Add your drawing code here
 
-            base.Draw(gameTime);
-        }
-    }
-}
+            
+        
+    
+            
+}}
