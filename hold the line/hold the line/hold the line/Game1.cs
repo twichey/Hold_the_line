@@ -20,15 +20,25 @@ namespace hold_the_line
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        enum GameStates { TitleScreen, Playing, PlayerDead, GameOver };
+        GameStates gameState = GameStates.TitleScreen;
+        Texture2D titleScreen;
+        Texture2D spriteSheet;
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Map
-        xTileRectangle;
+        Map map;
+        xTile.Dimensions.Rectangle mapViewport;
         XnaDisplayDevice xnaDisplayDevice;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 10 * 32;
+            graphics.PreferredBackBufferHeight = 11 * 32;
+            graphics.ApplyChanges();
+
+
             Content.RootDirectory = "Content";
         }
 
@@ -42,7 +52,8 @@ namespace hold_the_line
         {
             // TODO: Add your initialization logic here
             xnaDisplayDevice = new XnaDisplayDevice(this.Content, GraphicsDevice);
-            
+
+            mapViewport = new xTile.Dimensions.Rectangle(0, 0, this.Window.ClientBounds.Width, this.Window.ClientBounds.Height);
 
             base.Initialize();
         }
@@ -56,7 +67,8 @@ namespace hold_the_line
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-           
+            map = Content.Load<Map>("GameMap");
+            map.LoadTileSheets(xnaDisplayDevice);
 
             // TODO: use this.Content to load your game content here
         }
@@ -84,29 +96,18 @@ namespace hold_the_line
             // TODO: Add your update logic here
             KeyboardState kb = Keyboard.GetState();
 
-            if (kb.IsKeyDown(Keys.Right));}
-            
-                
-           
-
-        
-
-
-
+            if (kb.IsKeyDown(Keys.Right)) ;
+        }
 
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
-        protected override   
-        
-           
+        protected override void Draw(GameTime gameTime)
+        {
+            map.Draw(xnaDisplayDevice, mapViewport);
 
-            
-            // TODO: Add your drawing code here
-
-            
-        
-    
-            
-}}
+            base.Draw(gameTime);
+        }
+    }            
+}
