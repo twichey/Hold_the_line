@@ -24,6 +24,7 @@ namespace hold_the_line
         GameStates gameState = GameStates.TitleScreen;
         Texture2D titleScreen;
         Texture2D spriteSheet;
+        Texture2D igw;
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -34,8 +35,8 @@ namespace hold_the_line
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = 10 * 32;
-            graphics.PreferredBackBufferHeight = 11 * 32;
+            graphics.PreferredBackBufferWidth = 20 * 32;
+            graphics.PreferredBackBufferHeight = 15 * 32;
             graphics.ApplyChanges();
 
 
@@ -66,6 +67,8 @@ namespace hold_the_line
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            igw = Content.Load<Texture2D>("igw");
 
             map = Content.Load<Map>("GameMap");
             map.LoadTileSheets(xnaDisplayDevice);
@@ -106,6 +109,10 @@ namespace hold_the_line
         protected override void Draw(GameTime gameTime)
         {
             map.Draw(xnaDisplayDevice, mapViewport);
+
+            spriteBatch.Begin();
+            spriteBatch.Draw(igw, Vector2.Zero, Color.White);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

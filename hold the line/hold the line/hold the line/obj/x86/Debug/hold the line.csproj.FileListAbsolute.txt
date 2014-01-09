@@ -9,3 +9,6 @@ C:\Users\eahscs\Documents\GitHub\Hold_the_line\hold the line\hold the line\hold 
 C:\Users\eahscs\Documents\GitHub\Hold_the_line\hold the line\hold the line\hold the line\bin\x86\Debug\Content\exploding stuff.xnb
 C:\Users\eahscs\Documents\GitHub\Hold_the_line\hold the line\hold the line\hold the line\bin\x86\Debug\Content\GameMap.xnb
 C:\Users\eahscs\Documents\GitHub\Hold_the_line\hold the line\hold the line\hold the line\bin\x86\Debug\Content\esktop\breakout.xnb
+C:\Users\eahscs\Documents\GitHub\Hold_the_line\hold the line\hold the line\hold the line\bin\x86\Debug\Content\TanksCompleted.xnb
+C:\Users\eahscs\Documents\GitHub\Hold_the_line\hold the line\hold the line\hold the line\bin\x86\Debug\Content\Menu Buttons.xnb
+C:\Users\eahscs\Documents\GitHub\Hold_the_line\hold the line\hold the line\hold the line\bin\x86\Debug\Content\igw.xnb

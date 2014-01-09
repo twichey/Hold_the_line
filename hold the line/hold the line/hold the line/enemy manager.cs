@@ -13,10 +13,10 @@ namespace Asteroid_Belt_Assault
         private Rectangle initialFrame;
         private int frameCount;
 
-        public List<Enemy> Enemies = new List<Enemy>();
+        //public List<Enemy> Enemies = new List<Enemy>();
 
-        public ShotManager EnemyShotManager;
-        private PlayerManager playerManager;
+        //public ShotManager EnemyShotManager;
+        //private PlayerManager playerManager;
 
         public int MinShipsPerWave = 8;
         public int MaxShipsPerWave = 15;
@@ -80,27 +80,28 @@ namespace Asteroid_Belt_Assault
             Texture2D texture,
             Rectangle initialFrame,
             int frameCount,
-            PlayerManager playerManager,
+            //PlayerManager playerManager,
             Rectangle screenBounds)
         {
             this.texture = texture;
             this.initialFrame = initialFrame;
             this.frameCount = frameCount;
-            this.playerManager = playerManager;
+            //this.playerManager = playerManager;
 
-            EnemyShotManager = new ShotManager(
+            /*EnemyShotManager = new ShotManager(
                 texture,
                 new Rectangle(0, 300, 5, 5),
                     4,
                     2,
                     150f,
                     screenBounds);
-
+            */
             setUpWaypoints();
         }
 
         public void SpawnEnemy(int path)
         {
+            /*
             Enemy thisEnemy = new Enemy(
                 texture,
                 pathWaypoints[path][0],
@@ -110,7 +111,7 @@ namespace Asteroid_Belt_Assault
             {
                 thisEnemy.AddWaypoint(pathWaypoints[path][x]);
             }
-            Enemies.Add(thisEnemy);
+            Enemies.Add(thisEnemy);*/
         }
 
         public void SpawnWave(int waveType)
@@ -145,6 +146,7 @@ namespace Asteroid_Belt_Assault
 
         public void Update(GameTime gameTime)
         {
+            /*
             EnemyShotManager.Update(gameTime);
 
             for (int x = Enemies.Count - 1; x >= 0; x--)
@@ -174,7 +176,7 @@ namespace Asteroid_Belt_Assault
                     }
                 }
             }
-
+            */
             if (Active)
             {
                 updateWaveSpawns(gameTime);
@@ -183,12 +185,12 @@ namespace Asteroid_Belt_Assault
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            EnemyShotManager.Draw(spriteBatch);
+            //EnemyShotManager.Draw(spriteBatch);
 
-            foreach (Enemy enemy in Enemies)
-            {
-                enemy.Draw(spriteBatch);
-            }
+            //foreach (Enemy enemy in Enemies)
+            //{
+            //    enemy.Draw(spriteBatch);
+            //}
         }
 
     }
